@@ -1,8 +1,8 @@
 import 'dart:convert';
 
 import 'package:flutter/foundation.dart';
+import 'package:nb_utils/nb_utils.dart';
 import 'package:ryalize/models/model_user.dart';
-import 'package:shared_preferences/shared_preferences.dart';
 
 abstract class StorageServices {
   setUser(ModelUser data);

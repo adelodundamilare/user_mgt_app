@@ -1,12 +1,15 @@
 import 'package:flutter/material.dart';
 import 'package:nb_utils/nb_utils.dart';
 import 'package:ryalize/models/model_api_response.dart';
+import 'package:ryalize/models/model_request.dart';
 import 'package:ryalize/models/model_user.dart';
 import 'package:ryalize/services/dependency_service.dart';
 import 'package:ryalize/services/storage_service.dart';
+import 'package:ryalize/services/user_service.dart';
 import 'package:ryalize/utils/base_model.dart';
 import 'package:ryalize/utils/base_widget.dart';
 import 'package:ryalize/utils/constants.dart';
+import 'package:ryalize/utils/function_helpers.dart';
 import 'package:ryalize/utils/project_logger.dart';
 import 'package:ryalize/utils/ui_utils.dart';
 import 'package:ryalize/utils/validators.dart';
@@ -20,7 +23,7 @@ class _VM extends BaseModel {
   final logger = getLogger("form_edit_profile.dart");
   final GlobalKey<FormState> formKey;
 
-  // final _userController = locator<UserController>();
+  final _userService = locator<UserService>();
   final _storageService = locator<StorageServices>();
 
   _VM(this.formKey);
@@ -61,8 +64,26 @@ class _VM extends BaseModel {
     try {
       isLoading = true;
 
+      var voterID = _storageService.getUser().data?.voterID;
+      var res = await _userService.doEditProfile(ModelRequestEditProfile(
+          voterID: voterID,
+          firstName: firstName,
+          email: email,
+
+          /// for minimal showcase, i'll hard code this part
+          /// to make the edit profile call successful
+          country: '00',
+          state: '00',
+          lga: '00',
+          address: '00',
+          profileImg: '00',
+
+          /// => end
+          lastName: lastName));
+
+      await FunctionHelpers.fetchAndSaveProfile(id: voterID ?? '0');
       return ModelApiResult(
-          status: EnumApiResult.failed, message: 'res.message');
+          status: EnumApiResult.success, message: res.message);
     } catch (error) {
       logger.e('submitForm():::${error.toString()}');
       return ModelApiResult(

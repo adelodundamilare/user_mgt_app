@@ -7,7 +7,6 @@ import 'package:ryalize/screens/home/home_vm.dart';
 import 'package:ryalize/utils/base_widget.dart';
 import 'package:ryalize/utils/constants.dart';
 import 'package:ryalize/utils/ui_utils.dart';
-import 'package:ryalize/widgets/project_button.dart';
 import 'package:ryalize/widgets/project_container.dart';
 import 'package:ryalize/widgets/project_text.dart';
 
@@ -71,13 +70,11 @@ class _ProfileCard extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final model = Provider.of<HomeVM>(context);
     return Stack(
       clipBehavior: Clip.none,
       children: [
         ProjectContainer(
-          bgColor: kColorPrimary,
-          gradient: kGreenGradient,
+          gradient: kPrimaryGradient,
           width: kWidthFull(context),
           height: 150,
           child: Stack(
@@ -93,11 +90,10 @@ class _ProfileCard extends StatelessWidget {
                           borderRadius:
                               const BorderRadius.all(Radius.circular(1000))))),
               ProjectContainer(
-                bgColor: kColorAccent,
+                bgColor: kColorWhite,
                 child: const ProjectText(
-                  'Update',
+                  'Tap to Update Profile',
                   isBoldFont: true,
-                  textColor: kColorWhite,
                 ).paddingAll(kSpacingSmall),
               ).paddingAll(kSpacingMedium).onTap(() =>
                   UiUtils.showBottomSheetModal(

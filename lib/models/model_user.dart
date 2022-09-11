@@ -9,24 +9,24 @@ class ModelUser {
   ModelUser.fromJson(Map<String, dynamic> json) {
     status = json['status'];
     message = json['message'];
-    data = json['data'] != null ? Data.fromJson(json['data']) : null;
+    data = json['data'] != null ? new Data.fromJson(json['data']) : null;
     imgBaseUrl = json['img_base_url'];
   }
 
   Map<String, dynamic> toJson() {
-    final Map<String, dynamic> data = {};
-    data['status'] = status;
-    data['message'] = message;
+    final Map<String, dynamic> data = new Map<String, dynamic>();
+    data['status'] = this.status;
+    data['message'] = this.message;
     if (this.data != null) {
       data['data'] = this.data!.toJson();
     }
-    data['img_base_url'] = imgBaseUrl;
+    data['img_base_url'] = this.imgBaseUrl;
     return data;
   }
 }
 
 class Data {
-  String? mobilizerID;
+  String? voterID;
   String? pvcNumber;
   String? pvcStatus;
   String? pvcStatusDate;
@@ -48,6 +48,7 @@ class Data {
   String? communityID;
   String? address;
   String? dateOfBirth;
+  String? mobilizerID;
   String? profileImg;
   String? dateRegistered;
   String? registrationMacAddress;
@@ -64,7 +65,7 @@ class Data {
   String? lastModifiedBy;
 
   Data(
-      {this.mobilizerID,
+      {this.voterID,
       this.pvcNumber,
       this.pvcStatus,
       this.pvcStatusDate,
@@ -86,6 +87,7 @@ class Data {
       this.communityID,
       this.address,
       this.dateOfBirth,
+      this.mobilizerID,
       this.profileImg,
       this.dateRegistered,
       this.registrationMacAddress,
@@ -102,7 +104,7 @@ class Data {
       this.lastModifiedBy});
 
   Data.fromJson(Map<String, dynamic> json) {
-    mobilizerID = json['mobilizerID'];
+    voterID = json['voterID'];
     pvcNumber = json['pvc_number'];
     pvcStatus = json['pvcStatus'];
     pvcStatusDate = json['pvcStatusDate'];
@@ -124,6 +126,7 @@ class Data {
     communityID = json['communityID'];
     address = json['address'];
     dateOfBirth = json['dateOfBirth'];
+    mobilizerID = json['mobilizerID'];
     profileImg = json['profile_img'];
     dateRegistered = json['dateRegistered'];
     registrationMacAddress = json['registration_mac_address'];
@@ -141,43 +144,44 @@ class Data {
   }
 
   Map<String, dynamic> toJson() {
-    final Map<String, dynamic> data = Map<String, dynamic>();
-    data['mobilizerID'] = mobilizerID;
-    data['pvc_number'] = pvcNumber;
-    data['pvcStatus'] = pvcStatus;
-    data['pvcStatusDate'] = pvcStatusDate;
-    data['firstName'] = firstName;
-    data['lastName'] = lastName;
-    data['gender'] = gender;
-    data['email'] = email;
-    data['password'] = password;
-    data['mobile'] = mobile;
-    data['mobileDialCode'] = mobileDialCode;
-    data['mobile_iso_code_2'] = mobileIsoCode2;
-    data['mobileStatus'] = mobileStatus;
-    data['mobileOtp'] = mobileOtp;
-    data['dateMobileOTPsent'] = dateMobileOTPsent;
-    data['dateMobileStatus'] = dateMobileStatus;
-    data['country'] = country;
-    data['state'] = state;
-    data['lga'] = lga;
-    data['communityID'] = communityID;
-    data['address'] = address;
-    data['dateOfBirth'] = dateOfBirth;
-    data['profile_img'] = profileImg;
-    data['dateRegistered'] = dateRegistered;
-    data['registration_mac_address'] = registrationMacAddress;
-    data['registration_medium'] = registrationMedium;
-    data['registration_agent'] = registrationAgent;
-    data['registration_ip'] = registrationIp;
-    data['status'] = status;
-    data['email_token'] = emailToken;
-    data['token_date'] = tokenDate;
-    data['emailConfirmedStatus'] = emailConfirmedStatus;
-    data['emailConfirmDate'] = emailConfirmDate;
-    data['created_by'] = createdBy;
-    data['last_modified'] = lastModified;
-    data['last_modified_by'] = lastModifiedBy;
+    final Map<String, dynamic> data = new Map<String, dynamic>();
+    data['voterID'] = this.voterID;
+    data['pvc_number'] = this.pvcNumber;
+    data['pvcStatus'] = this.pvcStatus;
+    data['pvcStatusDate'] = this.pvcStatusDate;
+    data['firstName'] = this.firstName;
+    data['lastName'] = this.lastName;
+    data['gender'] = this.gender;
+    data['email'] = this.email;
+    data['password'] = this.password;
+    data['mobile'] = this.mobile;
+    data['mobileDialCode'] = this.mobileDialCode;
+    data['mobile_iso_code_2'] = this.mobileIsoCode2;
+    data['mobileStatus'] = this.mobileStatus;
+    data['mobileOtp'] = this.mobileOtp;
+    data['dateMobileOTPsent'] = this.dateMobileOTPsent;
+    data['dateMobileStatus'] = this.dateMobileStatus;
+    data['country'] = this.country;
+    data['state'] = this.state;
+    data['lga'] = this.lga;
+    data['communityID'] = this.communityID;
+    data['address'] = this.address;
+    data['dateOfBirth'] = this.dateOfBirth;
+    data['mobilizerID'] = this.mobilizerID;
+    data['profile_img'] = this.profileImg;
+    data['dateRegistered'] = this.dateRegistered;
+    data['registration_mac_address'] = this.registrationMacAddress;
+    data['registration_medium'] = this.registrationMedium;
+    data['registration_agent'] = this.registrationAgent;
+    data['registration_ip'] = this.registrationIp;
+    data['status'] = this.status;
+    data['email_token'] = this.emailToken;
+    data['token_date'] = this.tokenDate;
+    data['emailConfirmedStatus'] = this.emailConfirmedStatus;
+    data['emailConfirmDate'] = this.emailConfirmDate;
+    data['created_by'] = this.createdBy;
+    data['last_modified'] = this.lastModified;
+    data['last_modified_by'] = this.lastModifiedBy;
     return data;
   }
 }

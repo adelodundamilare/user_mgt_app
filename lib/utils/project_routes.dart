@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:ryalize/screens/create_account/create_account_screen.dart';
 import 'package:ryalize/screens/get_started/get_started_screen.dart';
+import 'package:ryalize/screens/home/home_screen.dart';
 import 'package:ryalize/screens/login/login_screen.dart';
 import 'package:ryalize/screens/settings/settings_screen.dart';
 import 'package:ryalize/utils/constants.dart';
@@ -11,7 +12,7 @@ class ProjectRoutes {
     switch (settings.name) {
       case kRouteLogin:
         return MyCustomRoute(
-          builder: (_) => LoginScreen(),
+          builder: (_) => const LoginScreen(),
           settings: settings,
         );
       case kRouteCreateAccount:
@@ -24,11 +25,11 @@ class ProjectRoutes {
           builder: (_) => const GetStartedScreen(),
           settings: settings,
         );
-      // case kRouteForgetPassword:
-      //   return MyCustomRoute(
-      //     builder: (_) => ForgetPasswordRequestScreen(),
-      //     settings: settings,
-      //   );
+      case kRouteHome:
+        return MyCustomRoute(
+          builder: (_) => HomeScreen(),
+          settings: settings,
+        );
       case kRouteSettings:
         return MyCustomRoute(
           builder: (_) => const SettingsScreen(),
