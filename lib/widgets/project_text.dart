@@ -120,7 +120,7 @@ class ProjectTextTitle extends StatelessWidget {
       isBoldFont: isLightFont ? false : true,
       textSize: textSize ?? kFontSizeBig,
       letterSpacing: letterSpacing ?? 0,
-      textColor: textColor ?? kColorBlack,
+      textColor: textColor ?? Theme.of(context).textTheme.headline1?.color,
     );
   }
 }

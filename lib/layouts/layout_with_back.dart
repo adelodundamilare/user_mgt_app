@@ -27,10 +27,10 @@ class LayoutWithBack extends StatelessWidget {
         resizeToAvoidBottomInset: false,
         backgroundColor: bgColor,
         appBar: AppBar(
-          backgroundColor: kColorWhite,
+          backgroundColor: Theme.of(context).scaffoldBackgroundColor,
           elevation: elevation ?? 0,
           centerTitle: true,
-          iconTheme: const IconThemeData(color: kColorBlack),
+          iconTheme: IconThemeData(color: Theme.of(context).iconTheme.color),
           title: ProjectTextTitle(
             title,
             textSize: kFontSizeMedium,

@@ -116,7 +116,7 @@ final ThemeData kThemeData = ThemeData.light().copyWith(
     scaffoldBackgroundColor: kScaffoldBackgroundColor,
     dividerColor: Colors.grey[350]!,
     visualDensity: VisualDensity.adaptivePlatformDensity,
-    iconTheme: const IconThemeData(size: kFontSizeIcon),
+    iconTheme: const IconThemeData(size: kFontSizeIcon, color: kColorWhite),
     textTheme: TextTheme(
         headline1: kHeadline1TextStyle.copyWith(color: Colors.black),
         headline2: kHeadline2TextStyle.copyWith(color: Colors.black),
@@ -130,10 +130,10 @@ final ThemeData kThemeDataDark = ThemeData.dark().copyWith(
     primaryColor: kColorPrimary,
     primaryColorDark: Colors.black,
     primaryColorLight: Colors.white,
-    scaffoldBackgroundColor: Colors.grey[900],
+    scaffoldBackgroundColor: Colors.black,
     dividerColor: Colors.grey[350]!,
     visualDensity: VisualDensity.adaptivePlatformDensity,
-    iconTheme: const IconThemeData(size: kFontSizeIcon),
+    iconTheme: const IconThemeData(size: kFontSizeIcon, color: kColorWhite),
     textTheme: TextTheme(
       headline1: kHeadline1TextStyle.copyWith(color: Colors.white),
       headline2: kHeadline2TextStyle.copyWith(color: Colors.white),
