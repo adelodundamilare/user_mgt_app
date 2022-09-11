@@ -1,12 +1,13 @@
 import 'dart:convert';
 
 import 'package:flutter/foundation.dart';
-import 'package:ryalize/features/user/models/model_user.dart';
+import 'package:ryalize/models/model_user.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
 abstract class StorageServices {
   setUser(ModelUser data);
   ModelUser getUser();
+  clear();
 }
 
 class StorageServicesImpl implements StorageServices {
@@ -42,5 +43,10 @@ class StorageServicesImpl implements StorageServices {
     }
     dynamic _encoded = jsonEncode(items.toJson());
     return _preferences!.setString('user_profile', _encoded);
+  }
+
+  @override
+  clear() {
+    return _preferences!.clear();
   }
 }

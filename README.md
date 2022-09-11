@@ -26,7 +26,8 @@ Key Assessment Areas:
 The language used was Dart, through the Flutter framework, Other top libraries include
 - providers, to manage state
 - dio: to make API calls
-- get_it: for dependency injection
+- getx: for dependency injection
+- get: miscellaneuos usage
 
 ## Development Requirements / Tools
 Make sure you install [flutter_sdk] and [dart] installed on your system, this can be installed based on your operating system
@@ -59,4 +60,5 @@ Create an account, login, update profile and log out.
 - Login
 - Manage User Profile
 - Log out
+- Dark Mode Support
 - TDD

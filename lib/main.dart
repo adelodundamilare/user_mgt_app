@@ -1,6 +1,9 @@
 import 'package:flutter/material.dart';
+import 'package:ryalize/services/dependency_service.dart';
 
-void main() {
+void main() async {
+  WidgetsFlutterBinding.ensureInitialized();
+  await setupDependencyService();
   runApp(const MyApp());
 }
 
