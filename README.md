@@ -21,3 +21,42 @@ Key Assessment Areas:
 3. Validation
 4. Security Considerations
 ```
+
+## Development Framework
+The language used was Dart, through the Flutter framework, Other top libraries include
+- providers, to manage state
+- dio: to make API calls
+- get_it: for dependency injection
+
+## Development Requirements / Tools
+Make sure you install [flutter_sdk] and [dart] installed on your system, this can be installed based on your operating system
+
+## Running the Project
+Open the command line and navigate to the folder you wish to create the project (please ensure you have git configured on your system)
+
+clone the repo using the command below
+```
+git clone  [https://github.com/adelodundamilare/user_mgt_app]
+```
+
+Install project dependecies
+
+```
+flutter pub get
+```
+Start your emulator and run the app via VS Code or Android Studio
+
+## Generate an APK
+To generate an apk, run the following command
+```
+flutter build apk
+```
+
+Create an account, login, update profile and log out.
+
+## App Features
+- Create new user account
+- Login
+- Manage User Profile
+- Log out
+- TDD
