@@ -69,16 +69,6 @@ class _VM extends BaseModel {
           voterID: voterID,
           firstName: firstName,
           email: email,
-
-          /// for minimal showcase, i'll hard code this part
-          /// to make the edit profile call successful
-          country: '00',
-          state: '00',
-          lga: '00',
-          address: '00',
-          profileImg: '00',
-
-          /// => end
           lastName: lastName));
 
       await FunctionHelpers.fetchAndSaveProfile(id: voterID ?? '0');
