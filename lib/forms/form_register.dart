@@ -10,6 +10,7 @@ import 'package:ryalize/services/user_service.dart';
 import 'package:ryalize/utils/base_model.dart';
 import 'package:ryalize/utils/base_widget.dart';
 import 'package:ryalize/utils/constants.dart';
+import 'package:ryalize/utils/function_helpers.dart';
 import 'package:ryalize/utils/project_logger.dart';
 import 'package:ryalize/utils/ui_utils.dart';
 import 'package:ryalize/utils/validators.dart';
@@ -57,12 +58,15 @@ class _VM extends BaseModel {
 
     try {
       isLoading = true;
-      var _ipAddress = await _getNetworkInfo();
-      var _macAddress = '02:00:00:00:00:00';
+      var ipAddress = await _getNetworkInfo();
+
+      /// fetching user device mac address is currently
+      /// unavailable for android and ios devices
+      var macAddress = '02:00:00:00:00:00';
       var res = await _userService.doRegister(RegisterUserRequestModel(
-          voterip: _ipAddress,
-          macAddress: _macAddress,
-          mobile: '+2348099868604', //=>this can only work locally
+          voterip: ipAddress,
+          macAddress: macAddress,
+          mobile: FunctionHelpers.formatPhoneNumber(phone),
           password: password));
       return ModelApiResult(
           status: EnumApiResult.success, message: res.message);
@@ -123,6 +127,7 @@ class FormCreateAccount extends StatelessWidget {
                   ),
                 ).paddingTop(kSpacingMedium),
                 ProjectButton(
+                        isLoading: model.isLoading,
                         onTap: () async {
                           var result = await model.submitForm();
                           switch (result.status) {

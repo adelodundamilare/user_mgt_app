@@ -47,6 +47,10 @@ flutter pub get
 ```
 Start your emulator and run the app via VS Code or Android Studio
 
+To complete the signup flow, you might be asked to enter a code you received on the phone number you registered with, something which may never come unless you're using a local number.
+
+If you do not want to go through that stress, you can access the app using the details you'll find on the login screen
+
 ## Generate an APK
 To generate an apk, run the following command
 ```

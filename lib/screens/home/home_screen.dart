@@ -35,10 +35,7 @@ class HomeScreen extends StatelessWidget {
                 children: [
                   ProjectTextTitle(model.getName()),
                   const _ProfileCard().paddingTop(kSpacingMedium),
-                  const _UserInfo().paddingTop(kSpacingLarge + kSpacingLarge),
-                  const SizedBox(
-                    height: 50,
-                  )
+                  const _UserInfo().paddingTop(kSpacingMedium),
                 ],
               ).paddingAll(kSpacingMedium).paddingBottom(kSpacingLarge),
             ),

@@ -110,8 +110,8 @@ class FormLogin extends StatelessWidget {
                 )
                     .onTap(() => UiUtils.goto(kRouteCreateAccount))
                     .paddingTop(kSpacingMedium),
-                _LoginInfo(),
                 ProjectButton(
+                        isLoading: model.isLoading,
                         onTap: () async {
                           var result = await model.submitForm();
                           switch (result.status) {
@@ -135,25 +135,5 @@ class FormLogin extends StatelessWidget {
             ),
           );
         });
-  }
-}
-
-class _LoginInfo extends StatelessWidget {
-  const _LoginInfo({Key? key}) : super(key: key);
-
-  @override
-  Widget build(BuildContext context) {
-    return ProjectContainer(
-        bgColor: kColorGrey,
-        child: Column(
-          crossAxisAlignment: CrossAxisAlignment.start,
-          children: const [
-            ProjectTextTitle('Login Info'),
-            ProjectText(
-                'If you do not want to go through the sign up stress, you can access the app using the details below'),
-            ProjectTextTitle('phone: 08099868604'),
-            ProjectTextTitle('password: password'),
-          ],
-        ).paddingAll(kSpacingSmall));
   }
 }

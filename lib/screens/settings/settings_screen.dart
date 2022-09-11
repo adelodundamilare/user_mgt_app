@@ -62,7 +62,7 @@ class _FooterWidget extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final model = Provider.of(context);
+    final model = Provider.of<SettingsVM>(context);
 
     return Column(
       children: [

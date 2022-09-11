@@ -46,8 +46,14 @@ class _VM extends BaseModel {
       //   password: password,
       //   passwordChange: '1',
       // ));
+
+      /// had to disable to update password feature cause
+      /// I don't want the password changed on the main platform
+      /// and do not want to go through constant stress of
+      /// changing password.
       return ModelApiResult(
-          status: EnumApiResult.failed, message: 'res.message');
+          status: EnumApiResult.failed,
+          message: 'Update password feature is currently not supported');
     } catch (error) {
       logger.e('submitForm():::${error.toString()}');
       return ModelApiResult(
