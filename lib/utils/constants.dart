@@ -141,7 +141,7 @@ final ThemeData kThemeDataDark = ThemeData.dark().copyWith(
     ));
 
 // Routes
-const kRouteInit = "/"; //delete this...
+const kRouteGetStarted = "/"; //delete this...
 const kRouteLogin = '/login';
 const kRouteSignup = "/signup";
 const kRouteHome = "/home";
