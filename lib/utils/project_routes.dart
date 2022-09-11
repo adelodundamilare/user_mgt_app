@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:ryalize/screens/create_account/create_account_screen.dart';
 import 'package:ryalize/screens/get_started/get_started_screen.dart';
 import 'package:ryalize/screens/login/login_screen.dart';
 import 'package:ryalize/screens/settings/settings_screen.dart';
@@ -11,6 +12,11 @@ class ProjectRoutes {
       case kRouteLogin:
         return MyCustomRoute(
           builder: (_) => LoginScreen(),
+          settings: settings,
+        );
+      case kRouteCreateAccount:
+        return MyCustomRoute(
+          builder: (_) => const CreateAccountScreen(),
           settings: settings,
         );
       case kRouteGetStarted:

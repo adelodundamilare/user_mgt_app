@@ -27,7 +27,6 @@ class LoginScreen extends StatelessWidget {
           return LayoutWithBack(
             title: '',
             isFullHeight: true,
-            showBgDesign: true,
             isLoading: model.isLoading,
             body: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
@@ -37,33 +36,6 @@ class LoginScreen extends StatelessWidget {
                 const FormLogin()
                     .paddingSymmetric(vertical: kSpacingMedium)
                     .expand(),
-                ProjectButton(
-                    onTap: () async {
-                      var result = await model.submitForm();
-                      switch (result.status) {
-                        case EnumApiResult.success:
-                          UiUtils.goto(kRouteHome);
-                          break;
-                        case EnumApiResult.failed:
-                          UiUtils.showDialog(
-                              title: '',
-                              widget: ShowDialogError(
-                                  message: result.message ??
-                                      'Unable to complete action, please try again'));
-                          break;
-                        default:
-                      }
-                    },
-                    text: 'Login',
-                    withBg: true),
-                const ProjectText(
-                  'Register if you don\'t have an account',
-                  centerText: true,
-                )
-                    .onTap(() => UiUtils.goto(kRouteSignup))
-                    .paddingTop(kSpacingMedium)
-                    .paddingBottom(kSpacingLarge)
-                    .center()
               ],
             ).paddingAll(kSpacingMedium),
           );

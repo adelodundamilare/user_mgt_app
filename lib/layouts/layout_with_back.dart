@@ -8,14 +8,13 @@ class LayoutWithBack extends StatelessWidget {
   final String title;
   final double? elevation;
   final Color? bgColor;
-  final bool isLoading, isFullHeight, showBgDesign;
+  final bool isLoading, isFullHeight;
   const LayoutWithBack(
       {Key? key,
       required this.body,
       required this.title,
       this.elevation,
       this.bgColor,
-      this.showBgDesign = false,
       this.isFullHeight = false,
       this.isLoading = false})
       : super(key: key);
@@ -39,18 +38,6 @@ class LayoutWithBack extends StatelessWidget {
         ),
         body: Stack(
           children: [
-            showBgDesign
-                ? Positioned(
-                    bottom: 0,
-                    child: Container(
-                      width: kWidthFull(context),
-                      height: 218, //image hard codded height
-                      decoration: const BoxDecoration(
-                          image: DecorationImage(
-                              image: AssetImage(kImagesBgDesign))),
-                    ).opacity(opacity: 0.2),
-                  )
-                : Container(),
             isFullHeight
                 ? body
                 : SingleChildScrollView(

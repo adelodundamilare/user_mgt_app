@@ -28,8 +28,8 @@ BoxShadow kBoxShadow(Color color) => BoxShadow(
     );
 
 // Colors
-const Color kColorPrimary = Color(0xFF3AA555);
-const Color kColorPrimaryDark = Color(0xFF34844A);
+const Color kColorPrimary = Color(0xFF8E24AA);
+const Color kColorPrimaryDark = Color(0xFFE91E63);
 const Color kColorTransparent = Colors.transparent;
 const Color kColorAccent = Color(0xFF48C1EA);
 const Color kColorPrimaryText = Colors.black;
@@ -42,6 +42,13 @@ const Color kColorDarkGrey = Color(0xFF707070);
 const Color kColorGrey = Color(0xFFECECEC);
 
 // GRADIENTS
+const LinearGradient kPrimaryGradient = LinearGradient(
+    colors: [kColorPrimary, kColorPrimaryDark],
+    begin: FractionalOffset.topCenter,
+    end: FractionalOffset.bottomCenter,
+    stops: [0.3, 1.0],
+    tileMode: TileMode.clamp);
+
 const LinearGradient kGreenGradient = LinearGradient(
     colors: [Color(0xFF3AA555), Color(0xFF00E941)],
     begin: FractionalOffset.topCenter,
@@ -143,22 +150,15 @@ final ThemeData kThemeDataDark = ThemeData.dark().copyWith(
 // Routes
 const kRouteGetStarted = "/"; //delete this...
 const kRouteLogin = '/login';
-const kRouteSignup = "/signup";
+const kRouteCreateAccount = "/create-account";
 const kRouteHome = "/home";
 const kRouteSettings = "/setting";
 
 // Images
-const String kImagesBg = 'images/bat_bg.jpg';
-const String kImagesBgDesign = 'images/bat_bg_design.png';
+const String kImagesLogo = 'images/logo.png';
 const String kImagesEmptyIcon = 'images/empty_icon.png';
-const String kImagesAvatar = 'images/avatar.png';
-const String kImagesTinubuAvatar = 'images/tinubu_avatar.png';
-const String kImagesApcLogo = 'images/apc_logo.png';
 const String kImagesRemotePlaceholder =
     'https://www.pulsecarshalton.co.uk/wp-content/uploads/2016/08/jk-placeholder-image.jpg';
-
-// svg_icons
-// const String kImagesSvgGuardian = 'images/guardian.svg';
 
 // width
 double kWidthFull(BuildContext context) {
@@ -175,5 +175,19 @@ const EdgeInsetsGeometry kPaddingAllMedium = EdgeInsets.all(kSpacingMedium);
 const EdgeInsetsGeometry kPaddingAllLarge = EdgeInsets.all(kSpacingLarge);
 
 // Endpoint
-const baseUrl = 'https://www.bat23.com/mobilizerapi';
-const kEndpointRegister = baseUrl + '/cremobposts';
+const baseUrl = 'https://www.bat23.com/voterapi';
+const kEndpointRegister = '$baseUrl/create-account';
+const kEndpointVerifyAccount = '$baseUrl/verify-registration-otp';
+const kEndpointResendOTP = '$baseUrl/resend-registration-otp';
+const kEndpointLogin = '$baseUrl/validate-user';
+const kEndpointRequestPasswordReset = '$baseUrl/request-reset-password';
+const kEndpointCreatePassword = '$baseUrl/reset-password';
+const kEndpointVerifyPVC = '$baseUrl/verify-pvc';
+const kEndpointFetchProfile = '$baseUrl/fetch-voter-profile';
+const kEndpointUpdateProfile = '$baseUrl/edit-voter-profile';
+const kEndpointFetchLGAs = '$baseUrl/fetch-state-lga';
+const kEndpointChangeToMobilizer = '$baseUrl/become-mobilizer';
+const kEndpointSendEmailOTP = '$baseUrl/send-email-otp';
+const kEndpointUploadProfilePics = '$baseUrl/upload-voter-profile-img';
+const kEndpointVerifyEmailOTP = '$baseUrl/verify-email-otp';
+const kEndpointResendEmailOTP = '$baseUrl/resend-email-otp';
