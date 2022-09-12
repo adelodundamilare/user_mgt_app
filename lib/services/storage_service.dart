@@ -5,8 +5,13 @@ import 'package:nb_utils/nb_utils.dart';
 import 'package:ryalize/models/model_user.dart';
 
 abstract class StorageServices {
+  // user
   setUser(ModelUser data);
   ModelUser getUser();
+  // dark mode
+  setIsDarkMode(bool value);
+  bool isDarkMode();
+  // clear
   clear();
 }
 
@@ -47,6 +52,16 @@ class StorageServicesImpl implements StorageServices {
 
   @override
   clear() {
-    return _preferences!.clear();
+    return _preferences!.remove('user_profile');
+  }
+
+  @override
+  bool isDarkMode() {
+    return _preferences!.getBool('user_dark_mode') ?? false;
+  }
+
+  @override
+  setIsDarkMode(bool value) {
+    return _preferences!.setBool('user_dark_mode', value);
   }
 }

@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:nb_utils/nb_utils.dart';
+import 'package:ryalize/extensions/ryalize_color_scheme.dart';
 import 'package:ryalize/utils/constants.dart';
 import 'package:ryalize/widgets/project_text.dart';
 
@@ -30,7 +31,8 @@ class LayoutWithBack extends StatelessWidget {
           backgroundColor: Theme.of(context).scaffoldBackgroundColor,
           elevation: elevation ?? 0,
           centerTitle: true,
-          iconTheme: IconThemeData(color: Theme.of(context).iconTheme.color),
+          iconTheme:
+              IconThemeData(color: Theme.of(context).colorScheme.textColor),
           title: ProjectTextTitle(
             title,
             textSize: kFontSizeMedium,

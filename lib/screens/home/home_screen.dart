@@ -2,6 +2,7 @@ import 'package:eva_icons_flutter/eva_icons_flutter.dart';
 import 'package:flutter/material.dart';
 import 'package:nb_utils/nb_utils.dart';
 import 'package:provider/provider.dart';
+import 'package:ryalize/extensions/ryalize_color_scheme.dart';
 import 'package:ryalize/forms/form_edit_profile.dart';
 import 'package:ryalize/screens/home/home_vm.dart';
 import 'package:ryalize/utils/base_widget.dart';
@@ -21,7 +22,7 @@ class HomeScreen extends StatelessWidget {
             appBar: AppBar(
               elevation: 0,
               centerTitle: true,
-              backgroundColor: kColorWhite,
+              backgroundColor: Theme.of(context).scaffoldBackgroundColor,
               actions: <Widget>[
                 const _SettingsWidget()
                     .onTap(() => UiUtils.goto(kRouteSettings))
@@ -87,7 +88,7 @@ class _ProfileCard extends StatelessWidget {
                           borderRadius:
                               const BorderRadius.all(Radius.circular(1000))))),
               ProjectContainer(
-                bgColor: kColorWhite,
+                bgColor: Theme.of(context).colorScheme.loginInfoContainer,
                 child: const ProjectText(
                   'Tap to Update Profile',
                   isBoldFont: true,
@@ -137,11 +138,11 @@ class _ProfileInfo extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return ProjectContainer(
-      bgColor: kColorGrey,
+      bgColor: Theme.of(context).colorScheme.loginInfoContainer,
       child: Row(children: [
         Icon(
           icon,
-          color: kColorPrimary,
+          color: Theme.of(context).colorScheme.primaryToWhite,
         ),
         ProjectText(text).paddingLeft(kSpacingSmall)
       ]).paddingAll(kSpacingMedium),

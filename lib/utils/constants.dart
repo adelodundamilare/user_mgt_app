@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:ryalize/extensions/ryalize_color_scheme.dart';
 
 // texts
 const String kThemeLocal = 'THEME_DATA';
@@ -116,6 +117,7 @@ final ThemeData kThemeData = ThemeData.light().copyWith(
     scaffoldBackgroundColor: kScaffoldBackgroundColor,
     dividerColor: Colors.grey[350]!,
     visualDensity: VisualDensity.adaptivePlatformDensity,
+    dialogBackgroundColor: Colors.white,
     iconTheme: const IconThemeData(size: kFontSizeIcon, color: kColorWhite),
     textTheme: TextTheme(
         headline1: kHeadline1TextStyle.copyWith(color: Colors.black),
@@ -132,6 +134,7 @@ final ThemeData kThemeDataDark = ThemeData.dark().copyWith(
     primaryColorLight: Colors.white,
     scaffoldBackgroundColor: Colors.black,
     dividerColor: Colors.grey[350]!,
+    dialogBackgroundColor: Colors.black,
     visualDensity: VisualDensity.adaptivePlatformDensity,
     iconTheme: const IconThemeData(size: kFontSizeIcon, color: kColorWhite),
     textTheme: TextTheme(

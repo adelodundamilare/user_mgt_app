@@ -1,6 +1,7 @@
 import 'package:eva_icons_flutter/eva_icons_flutter.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
+import 'package:ryalize/extensions/ryalize_color_scheme.dart';
 import 'package:ryalize/utils/base_model.dart';
 import 'package:ryalize/utils/base_widget.dart';
 import 'package:ryalize/utils/constants.dart';
@@ -73,10 +74,6 @@ class ProjectFormInput extends StatelessWidget {
           return Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
-              // ProjectTextTitle(
-              //   placeholder ?? '',
-              //   textSize: kFontSizeMedium,
-              // ).paddingBottom(kSpacingSmall).visible(label is String),
               TextFormField(
                   controller: controller,
                   key: key,
@@ -97,8 +94,8 @@ class ProjectFormInput extends StatelessWidget {
                   onFieldSubmitted: onSaved,
                   inputFormatters: inputFormatters ??
                       ((numberFormatter != null) ? [numberFormatter!] : null),
-                  style: const TextStyle(
-                      color: kColorBlack,
+                  style: TextStyle(
+                      color: Theme.of(context).colorScheme.textColor,
                       fontSize: kFontSizeMedium,
                       fontFamily: kFontFamilyBold),
                   decoration: isDesignTwo

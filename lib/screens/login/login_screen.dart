@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:nb_utils/nb_utils.dart';
+import 'package:ryalize/extensions/ryalize_color_scheme.dart';
 import 'package:ryalize/forms/form_login.dart';
 import 'package:ryalize/layouts/layout_with_back.dart';
 import 'package:ryalize/screens/login/login_vm.dart';
@@ -40,7 +41,7 @@ class _LoginInfo extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return ProjectContainer(
-        bgColor: kColorGrey,
+        bgColor: Theme.of(context).colorScheme.loginInfoContainer,
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [

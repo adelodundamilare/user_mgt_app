@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:nb_utils/nb_utils.dart';
 import 'package:ryalize/utils/constants.dart';
+import 'package:ryalize/extensions/ryalize_color_scheme.dart';
 
 class ProjectText extends StatelessWidget {
   final String text;
@@ -51,8 +52,7 @@ class ProjectText extends StatelessWidget {
       maxLines: maxLines ?? 100,
       style: Theme.of(context).textTheme.bodyText1!.copyWith(
             letterSpacing: letterSpacing ?? 0,
-            color: (textColor ?? kColorPrimaryText)
-                .withOpacity(isActive ? 1 : 0.3),
+            color: textColor ?? Theme.of(context).colorScheme.textColor,
             fontStyle: isItalic ? FontStyle.italic : FontStyle.normal,
             decoration: isLineThrough
                 ? TextDecoration.lineThrough

@@ -97,7 +97,7 @@ class UiUtils {
           {required BuildContext context, required Widget widget}) =>
       showModalBottomSheet(
           context: context,
-          backgroundColor: kColorWhite,
+          backgroundColor: Theme.of(context).scaffoldBackgroundColor,
           isScrollControlled: true,
           shape: const RoundedRectangleBorder(
               borderRadius:
@@ -116,9 +116,10 @@ class UiUtils {
             );
           });
 
-  static showBottomSheet({required Widget widget}) =>
+  static showBottomSheet(
+          {required Widget widget, required BuildContext context}) =>
       Get.bottomSheet<BaseWidget>(widget,
-          backgroundColor: kColorWhite,
+          backgroundColor: Theme.of(context).scaffoldBackgroundColor,
           shape: const RoundedRectangleBorder(
               borderRadius:
                   BorderRadius.vertical(top: Radius.circular(kSpacingSmall))));
